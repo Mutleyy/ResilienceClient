@@ -41,9 +41,9 @@ namespace ResilienceClient
                 {
                     // Make a request and get a response string
                     // Configuration.WEB_API_ROOT + "/api/values/"
-                    var msg = string.Empty;
 
                     // TODO: Get the values
+                    var msg = await new NoStrategy().ExecuteAsync((c) => Task.FromResult<string>("mock"), cancellationToken);
 
                     // Display the response message on the console
                     progress.Report(ProgressWithMessage("Response : " + msg, Color.Green));
